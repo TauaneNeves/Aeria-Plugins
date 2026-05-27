@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@theme {
+  --color-pastel-blue: #e0f2fe; /* Azul bem clarinho */
+  --color-pastel-blue-dark: #bae6fd;
+}
