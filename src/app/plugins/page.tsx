@@ -1,17 +1,49 @@
-export default function PluginsList() {
-  const plugins = [{ name: "AeriaMenus", desc: "Menus modernos e intuitivos", slug: "aeriamenus" }];
+import Navbar from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import PluginCard from "../../components/PluginCard";
 
+const plugins = [
+  {
+    name: "AeriaMenus",
+    desc: "Menus modernos, rápidos e totalmente customizáveis.",
+    slug: "aeriamenus",
+    category: "Menus",
+  },
+  
+];
+
+export default function PluginsPage() {
   return (
-    <div className="max-w-6xl mx-auto py-20 px-6">
-      <h2 className="text-4xl font-bold mb-12">Nossos Plugins</h2>
-      <div className="grid md:grid-cols-3 gap-8">
-        {plugins.map((p) => (
-          <a href={`/plugins/${p.slug}`} key={p.slug} className="group p-8 rounded-3xl border border-blue-100 bg-white/50 backdrop-blur-md hover:bg-blue-50/50 transition">
-            <h3 className="text-xl font-bold mb-2">{p.name}</h3>
-            <p className="text-gray-500 text-sm">{p.desc}</p>
-          </a>
-        ))}
-      </div>
+    <div className="min-h-screen bg-[#f8fafc] text-slate-900">
+      
+      <Navbar />
+
+      <section className="max-w-7xl mx-auto px-6 py-24">
+
+        <div className="mb-16">
+          <h1 className="text-6xl font-black mb-4">
+            Nossos Plugins
+          </h1>
+
+          <p className="text-slate-500 text-xl">
+            Soluções modernas para servidores Minecraft.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8">
+          {plugins.map((plugin) => (
+            <PluginCard
+              key={plugin.slug}
+              name={plugin.name}
+              desc={plugin.desc}
+              slug={plugin.slug}
+              category={plugin.category}
+            />
+          ))}
+        </div>
+      </section>
+
+      <Footer />
     </div>
   );
 }

@@ -1,4 +1,7 @@
 import "./globals.css";
+import { GeistSans } from 'geist/font/sans'
+
+<body className={GeistSans.className}></body>
 
 export const metadata = {
   title: "Aeria Plugins",
